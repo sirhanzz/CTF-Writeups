@@ -88,10 +88,6 @@ This confirms that this is the actual flag.
 OPUCC{y0u_s0lv3d_RE!}
 </pre>
 
-<h2>Conclusion</h2>
 
-<p>
-The challenge teaches us that using <code>strings</code> can reveal hidden information inside a binary, 
-but not every result is the correct answer. 
 We must analyze the program flow using reverse engineering tools like Ghidra to find the real flag.
 </p>
