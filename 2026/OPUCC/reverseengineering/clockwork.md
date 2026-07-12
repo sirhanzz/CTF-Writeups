@@ -7,20 +7,18 @@
 <h2>Solution</h2>
 
 <p>
-This challenge gives us a 64-bit ELF executable that asks for a key.
-Running the program normally does not reveal the correct flag because it
-only tells us whether our input is correct or not. Therefore, the only
-way to solve the challenge is by reverse engineering the binary and
-understanding how the flag is being verified.
+This challenge provides a 64-bit ELF executable that asks the user to enter a key.
+When I ran the program, it only displayed whether the input was correct or incorrect,
+so there was no obvious way to obtain the flag directly. Because of this, I analyzed
+the binary with Ghidra to understand how the validation process works.
 </p>
 
-<h3>Step 1: Looking at the Binary</h3>
+<h3>Step 1: Exploring the Binary</h3>
 
 <p>
-The first thing I did was inspect the binary using tools which is
- <b>Ghidra</b>. Since the binary was not
-stripped, many function names and symbols were still available, making
-the analysis much easier.
+I first opened the executable in <b>Ghidra</b>. The binary was not stripped,
+so function names were still available, which made it much easier to understand
+its structure.
 </p>
 
 <pre>
@@ -34,42 +32,41 @@ clockwork.c
 </pre>
 
 <p>
-From these names, it was obvious that the flag verification was handled
-inside the <b>checkFlag()</b> function, so that became the main focus of
-the analysis.
+Among these functions, <b>checkFlag()</b> stood out because its name clearly
+suggested that it was responsible for verifying the user's input. I focused my
+analysis on this function.
 </p>
 
-<h3>Step 2: Understanding the Flag Check</h3>
+<h3>Step 2: Understanding the Verification Process</h3>
 
 <p>
-After opening <b>checkFlag()</b> in Ghidra, I found that the program does
-not compare the user's input directly with the flag. Instead, it processes
-each character one by one before checking it against a stored array.
+Inside <b>checkFlag()</b>, I found that the program does not compare the input
+directly with the flag. Instead, it transforms every character before comparing
+the result with an encrypted array stored in the binary.
 </p>
 
 <p>
-Three important parts are involved in this process:
+The verification relies on three important components:
 </p>
 
 <ul>
     <li><b>gear()</b> generates a pseudo-random byte.</li>
     <li><b>rotl8()</b> performs an 8-bit left rotation.</li>
-    <li><b>gears[]</b> stores the encrypted bytes that the transformed input must match.</li>
+    <li><b>gears[]</b> stores the encrypted values used for comparison.</li>
 </ul>
 
 <p>
-Before checking the characters, the program also initializes an internal
-state using the length of the input. This ensures that every time the
-correct-length input is provided, the same sequence of pseudo-random bytes
-is generated.
+Before processing the input, the program also initializes an internal state using
+the length of the entered string. Since the correct flag length is fixed, this
+produces the same sequence of pseudo-random bytes every time the program runs with
+an input of the correct length.
 </p>
 
-<h3>Step 3: How the Validation Works</h3>
+<h3>Step 3: How Each Character Is Checked</h3>
 
 <p>
-For each character entered by the user, the program performs several
-operations before comparing it with the encrypted values stored in
-<b>gears[]</b>.
+Each character of the input goes through a few transformations before it is
+compared with the corresponding value in <b>gears[]</b>.
 </p>
 
 <pre>
@@ -84,24 +81,24 @@ for each character:
 </pre>
 
 <p>
-In simple terms, each character is first XORed with a pseudo-random byte,
-then rotated to the left by a value based on that byte. The result is
-compared with the corresponding value inside the encrypted array.
-If even one byte is different, the program rejects the input.
+In other words, the program first XORs each character with a pseudo-random byte.
+The result is then rotated to the left by a number of bits determined by that
+same byte. Finally, the transformed value is compared against the encrypted data.
+If any comparison fails, the program immediately rejects the input.
 </p>
 
-<h3>Step 4: Reversing the Algorithm</h3>
+<h3>Step 4: Recovering the Flag</h3>
 
 <p>
-The good thing about this challenge is that both XOR and bit rotation are
-reversible operations. Once the validation process was understood, it was
-possible to reverse every step.
+After understanding the algorithm, recovering the flag became much easier because
+both XOR and bit rotation can be reversed. Instead of trying to guess the flag,
+I simply reversed the same operations performed by the program.
 </p>
 
 <p>
-For each encrypted byte in <b>gears[]</b>, I first generated the same
-pseudo-random byte using <b>gear()</b>, then rotated the encrypted value
-back to the right before applying XOR again.
+For each byte stored in <b>gears[]</b>, I generated the same pseudo-random value,
+rotated the encrypted byte back to the right, and then applied XOR again to obtain
+the original character.
 </p>
 
 <pre>
@@ -109,8 +106,7 @@ flag[i] = ROTR8(gears[i], g & 7) XOR g
 </pre>
 
 <p>
-Repeating this process for every byte successfully recovered the original
-flag.
+Repeating this process for every byte revealed the complete flag.
 </p>
 
 <h3>Recovered Flag</h3>
@@ -118,4 +114,3 @@ flag.
 <pre>
 OPUCC{c0gs_and_g3ars_keep_perf3ct_t1me_when_w0und_up_by_h4nds_67!!}
 </pre>
-
