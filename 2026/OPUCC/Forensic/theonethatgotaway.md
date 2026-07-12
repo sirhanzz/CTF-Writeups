@@ -1,4 +1,4 @@
-<img width="327" height="422" alt="image" src="https://github.com/user-attachments/assets/2232906a-9ab7-4948-ad38-7dacfda53b7c" /><img width="327" height="422" alt="Screenshot 2026-07-12 083649" src="https://github.com/user-attachments/assets/874acaa7-b4a5-430d-9c3f-16f6162beab4" />
+<img width="327" height="422" alt="image" src="https://github.com/user-attachments/assets/2232906a-9ab7-4948-ad38-7dacfda53b7c" /><img width="327" height="422" />
 <h1>The One That Got Away</h1>
 
 <h2>Steps</h2>
