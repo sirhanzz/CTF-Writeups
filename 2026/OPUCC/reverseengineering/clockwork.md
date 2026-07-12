@@ -7,18 +7,16 @@
 <h2>Solution</h2>
 
 <p>
-This challenge provides a 64-bit ELF executable that asks the user to enter a key.
-When I ran the program, it only displayed whether the input was correct or incorrect,
-so there was no obvious way to obtain the flag directly. Because of this, I analyzed
-the binary with Ghidra to understand how the validation process works.
+This challenge provides a 64-bit ELF executable that asks the user to enter a
+key. Running the program only tells whether the input is correct or incorrect,
+so I used <b>Ghidra</b> to analyze how the program checks the flag.
 </p>
 
-<h3>Step 1: Exploring the Binary</h3>
+<h3>Step 1: Explore the Binary</h3>
 
 <p>
-I first opened the executable in <b>Ghidra</b>. The binary was not stripped,
-so function names were still available, which made it much easier to understand
-its structure.
+After opening the binary in <b>Ghidra</b>, I noticed that it was not stripped,
+so the function names were still available.
 </p>
 
 <pre>
@@ -32,41 +30,37 @@ clockwork.c
 </pre>
 
 <p>
-Among these functions, <b>checkFlag()</b> stood out because its name clearly
-suggested that it was responsible for verifying the user's input. I focused my
-analysis on this function.
+The <b>checkFlag()</b> function is responsible for verifying the user's input,
+so I focused on analyzing it.
 </p>
 
-<h3>Step 2: Understanding the Verification Process</h3>
+<h3>Step 2: Understand the Verification</h3>
 
 <p>
-Inside <b>checkFlag()</b>, I found that the program does not compare the input
-directly with the flag. Instead, it transforms every character before comparing
-the result with an encrypted array stored in the binary.
+Instead of comparing the input directly with the flag, the program transforms
+each character before checking it against an encrypted array stored in
+<b>gears[]</b>.
 </p>
 
 <p>
-The verification relies on three important components:
+The verification uses three main functions:
 </p>
 
 <ul>
     <li><b>gear()</b> generates a pseudo-random byte.</li>
-    <li><b>rotl8()</b> performs an 8-bit left rotation.</li>
-    <li><b>gears[]</b> stores the encrypted values used for comparison.</li>
+    <li><b>rotl8()</b> rotates a byte to the left.</li>
+    <li><b>gears[]</b> stores the encrypted values.</li>
 </ul>
 
 <p>
-Before processing the input, the program also initializes an internal state using
-the length of the entered string. Since the correct flag length is fixed, this
-produces the same sequence of pseudo-random bytes every time the program runs with
-an input of the correct length.
+The program also creates an internal state using the input length so that the
+same sequence of pseudo-random bytes is generated each time.
 </p>
 
-<h3>Step 3: How Each Character Is Checked</h3>
+<h3>Step 3: How the Flag Is Checked</h3>
 
 <p>
-Each character of the input goes through a few transformations before it is
-compared with the corresponding value in <b>gears[]</b>.
+Each character goes through the following steps:
 </p>
 
 <pre>
@@ -81,24 +75,15 @@ for each character:
 </pre>
 
 <p>
-In other words, the program first XORs each character with a pseudo-random byte.
-The result is then rotated to the left by a number of bits determined by that
-same byte. Finally, the transformed value is compared against the encrypted data.
-If any comparison fails, the program immediately rejects the input.
+If every transformed character matches the corresponding value in
+<b>gears[]</b>, the program accepts the flag. Otherwise, it rejects the input.
 </p>
 
-<h3>Step 4: Recovering the Flag</h3>
+<h3>Step 4: Recover the Flag</h3>
 
 <p>
-After understanding the algorithm, recovering the flag became much easier because
-both XOR and bit rotation can be reversed. Instead of trying to guess the flag,
-I simply reversed the same operations performed by the program.
-</p>
-
-<p>
-For each byte stored in <b>gears[]</b>, I generated the same pseudo-random value,
-rotated the encrypted byte back to the right, and then applied XOR again to obtain
-the original character.
+Since XOR and bit rotation can be reversed, I applied the reverse operations to
+the encrypted values instead of guessing the flag.
 </p>
 
 <pre>
@@ -106,7 +91,7 @@ flag[i] = ROTR8(gears[i], g & 7) XOR g
 </pre>
 
 <p>
-Repeating this process for every byte revealed the complete flag.
+Repeating this for every byte revealed the original flag.
 </p>
 
 <h3>Recovered Flag</h3>
