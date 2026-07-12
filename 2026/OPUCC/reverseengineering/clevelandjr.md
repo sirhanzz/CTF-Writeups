@@ -13,7 +13,7 @@ The provided Python script verifies the flag by evaluating a polynomial instead 
 comparing the input directly. The flag must first satisfy the following format:
 </p>
 
-<pre><code>OPUCC{[a-z0-9_?]{15}}</code></pre>
+<code>OPUCC{[a-z0-9_?]{15}}</code>
 
 <p>
 The checker then computes 24 values using the equation:
