@@ -125,7 +125,3 @@ The value replacing:
 is the required CTF flag. Submit this value on the CTF platform to complete the
 SOFEA challenge.
 </p>
-
-<h2>Flag</h2>
-
-<pre><code>OPUCC{...}</code></pre>
