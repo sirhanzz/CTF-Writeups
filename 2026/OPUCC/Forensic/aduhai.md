@@ -1,9 +1,9 @@
 <img width="317" height="467" alt="Screenshot 2026-07-12 083409" src="https://github.com/user-attachments/assets/d9f15f1b-1266-4ac9-accb-7c5d0e0aaccd" />
-<h1>Aduhai</h1>
+
 
 <h2>Steps</h2>
 
-<h3>Step 1 — Extract the Archive</h3>
+<h3>Step 1 Extract the Archive</h3>
 
 <p>Extract the downloaded ZIP archive using the password provided in the challenge:</p>
 
@@ -17,7 +17,7 @@
 
 <pre>invoice.eml</pre>
 
-<h3>Step 2 — Inspect the Email</h3>
+<h3>Step 2 Inspect the Email</h3>
 
 <p>Open <strong>invoice.eml</strong> using a text editor or email analysis tool.</p>
 
@@ -30,7 +30,7 @@ Attachment: Invoice_Q4_2025.docm</pre>
 
 <p>The attached file is a Microsoft Word macro-enabled document, which may contain malicious VBA macros.</p>
 
-<h3>Step 3 — Extract the Email Attachment</h3>
+<h3>Step 3 Extract the Email Attachment</h3>
 
 <p>Use Python to extract the attachment safely without opening it in Microsoft Word:</p>
 
@@ -53,7 +53,7 @@ for part in message.iter_attachments():
 
 <pre>Invoice_Q4_2025.docm</pre>
 
-<h3>Step 4 — Analyse the Word Macro</h3>
+<h3>Step 4 Analyse the Word Macro</h3>
 
 <p>Do not enable or execute the macro. Install <strong>oletools</strong> to analyse it statically:</p>
 
@@ -67,13 +67,13 @@ for part in message.iter_attachments():
 
 <pre>python -m oletools.olevba Invoice_Q4_2025.docm &gt; NewMacros.bas</pre>
 
-<h3>Step 5 — Find the Encoded C2 Data</h3>
+<h3>Step 5 Find the Encoded C2 Data</h3>
 
 <p>Inspect <strong>NewMacros.bas</strong>. The macro contains a long Base64-encoded string.</p>
 
 <p>The encoded value represents the command-and-control beacon, but it has been encoded repeatedly.</p>
 
-<h3>Step 6 — Decode the Base64 Layers</h3>
+<h3>Step 6 Decode the Base64 Layers</h3>
 
 <p>Use the following Python script to locate the encoded string and decode it repeatedly:</p>
 
@@ -98,7 +98,7 @@ print(data.decode())</pre>
 
 <p>The data must be decoded through <strong>25 Base64 layers</strong>.</p>
 
-<h3>Step 7 — Recover the Beacon</h3>
+<h3>Step 7 Recover the Beacon</h3>
 
 <p>After decoding all 25 layers, the following beacon message is revealed:</p>
 
