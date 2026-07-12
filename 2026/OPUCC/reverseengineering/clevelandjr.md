@@ -5,106 +5,83 @@
 <img src="https://github.com/user-attachments/assets/ef8a9b13-ece2-4790-8c9a-25859971674c"
      alt="Challenge Description"
      width="317">
+
 <h2>Solution</h2>
 
 <p>
-This challenge provides an ELF executable that validates an input string.
-Since running the program normally does not reveal the correct input,
-the binary was analyzed using reverse engineering techniques.
+This challenge provides a 64-bit ELF executable that asks the user to enter a
+key. Running the program normally only displays a message asking for the
+correct input, so the binary needs to be analyzed to understand how the key is
+validated.
 </p>
 
 <h3>Step 1: Inspect the Binary</h3>
 
 <p>
-The executable was opened using reverse engineering tools such as
-<b>strings</b>, <b>Ghidra</b>, or <b>IDA</b>. Several interesting strings
-were discovered:
+The binary was opened in <b>Ghidra</b> to inspect its functions and strings.
+Several interesting strings can be found, including:
 </p>
 
-<ul>
-    <li>du bist gut genug</li>
-    <li>gut genug</li>
-    <li>hilfe</li>
-    <li>help</li>
-    <li>flag</li>
-    <li>correct</li>
-    <li>german only</li>
-    <li>Cleaveland Jr says: <i>Sprich die falsche Sprache.</i></li>
-</ul>
+<pre>
+du bist gut genug
+hilfe
+help
+flag
+correct
+german only
+Sprich die falsche Sprache.
+</pre>
 
 <p>
 The sentence <b>"Sprich die falsche Sprache."</b> translates to
-<b>"Speak the wrong language."</b>, suggesting that the program expects an
-intentionally incorrect German phrase.
+<b>"Speak the wrong language."</b>. This is the first hint that the program
+does not expect proper German, but instead expects an intentionally incorrect
+version of the phrase.
 </p>
 
-<h3>Step 2: Analyze the Functions</h3>
+<h3>Step 2: Analyze the Validation Logic</h3>
 
 <p>
-Several function names inside the binary provide additional hints:
+Looking at the functions inside the binary reveals several names that match
+German words:
 </p>
 
-<ul>
-    <li>op_du</li>
-    <li>op_bist</li>
-    <li>op_gug</li>
-    <li>op_genugg</li>
-    <li>op_falsch</li>
-    <li>handle_token</li>
-</ul>
+<pre>
+op_du
+op_bist
+op_gug
+op_genugg
+op_falsch
+handle_token
+</pre>
 
 <p>
-These functions indicate that the program parses individual words rather than
-checking a single fixed string.
+Instead of comparing the user's input directly with a fixed string, the program
+splits the input into individual words and checks each token one by one.
 </p>
 
-<h3>Step 3: Compare with Correct German</h3>
-
 <p>
-The correct German phrase is:
+The expected words are not the correct German phrase
+<b>"du bist gut genug"</b>. Instead, the binary uses intentionally misspelled
+words such as <b>gug</b> and <b>genugg</b>, matching the challenge hint about
+using the "wrong language".
 </p>
 
-<pre>du bist gut genug</pre>
+<h3>Step 3: Test Different Inputs</h3>
 
 <p>
-However, the binary contains the misspelled words:
+Using the clues from the strings, several combinations of the phrase were
+tested. Although words like <b>falsch</b> appear inside the binary, they are
+only used as part of the program's dialogue and are <b>not</b> part of the
+flag.
 </p>
 
-<ul>
-    <li><b>gut</b> → <b>gug</b></li>
-    <li><b>genug</b> → <b>genugg</b></li>
-</ul>
-
 <p>
-<p>
-Another hidden message says:
+After following the validation logic and testing the expected input, the
+program accepts a modified version of the phrase that also includes leetspeak
+characters.
 </p>
 
-<blockquote>
-JA. So falsch ist richtig.
-</blockquote>
+<h3>Recovered Flag</h3>
 
-<p>
-This translates to:
-</p>
-
-<blockquote>
-"Yes. Being wrong is correct."
-</blockquote>
-
-<p>
-This confirms that the challenge intentionally expects incorrect German
-instead of the proper phrase.
-</p>
-
-<h3>Step 4: Recover the Input</h3>
-
-<p>
-Combining all discovered tokens gives the expected input:
-</p>
-
-<pre>du bist gug genugg falsch</pre>
-
-
-
-
+<pre>OPUCC{du_b1st_gug_g3nuggggg}</pre>
