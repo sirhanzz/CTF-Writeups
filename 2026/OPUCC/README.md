@@ -26,3 +26,8 @@
 | Forensic | irohahaverse| [Writeup](Forensic/irohaverse.md) | 
 | Forensic | theonethatgotaway| [Writeup](Forensic/theonethatgotaway.md) |
 | Forensic | sus exe| [Writeup](Forensic/susexe.md) |
+| Osint | tehtarik| [Writeup](Osint/tehtarik.md) |
+| Osint | thelastmessage| [Writeup](Osint/thelastmessage.md) |
+| Osint | childhoodgame| [Writeup](Osint/childhoodgame.md) |
+| Osint | solit| [Writeup](Osint/solit.md) |
+| Osint | taxmeifyoucan| [Writeup](Osint/taxmeifyoucan.md) | 
