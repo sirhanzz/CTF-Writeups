@@ -18,3 +18,4 @@
 | ReverseEngineering | kirk| [Writeup](reverseengineering/kirk.md) | 
 | ReverseEngineering | mamu| [Writeup](reverseengineering/mamu.md) | 
 | ReverseEngineering | superbabyre| [Writeup](reverseengineering/superbabyre.md) | 
+| Forensic | memorysoup| [Writeup](Forensic/memorysoup.md) | 
