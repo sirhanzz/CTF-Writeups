@@ -20,7 +20,7 @@ The Canva color picker feature can be used to take the color hex from the image.
 <h3>Step 2: Decode the Hex String</h3>
 
 <p>
-CyberChef can be used to decode the hex into ascii text. By using the <b>From Hex</b> recipe  with a Space delimiter, the input is converted into the output [cite: 44, 46], and we got the flag!
+CyberChef can be used to decode the hex into ascii text. By using the <b>From Hex</b> recipe  with a Space delimiter, the input is converted into the output, and we got the flag!
 </p>
 
 <h3>Recovered Flag</h3>
