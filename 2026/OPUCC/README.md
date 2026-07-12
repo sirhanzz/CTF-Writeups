@@ -34,3 +34,11 @@
 | Misc | brainduck| [Writeup](Misc/brainduck.md) | 
 | Misc | shadeofduck| [Writeup](Misc/shadeofduck.md) | 
 | Misc | sofea| [Writeup](Misc/sofea.md) | 
+| Web| babyweb| [Writeup](Web/babyweb.md) | 
+| Web| guestbook| [Writeup](Web/guestbook.md) | 
+| Web| otpcanbebroken| [Writeup](Web/otpcanbebroken.md) | 
+| Web| arrayescape| [Writeup](Web/arrayescape.md) |
+| Web| unihive| [Writeup](Web/unihive.md) |
+| Web| unihive2| [Writeup](Web/unihive2.md) |
+| Web| sqlimaybe?| [Writeup](Web/sqlimaybe?.md) |
+| Web| agent| [Writeup](Web/agent.md) |
