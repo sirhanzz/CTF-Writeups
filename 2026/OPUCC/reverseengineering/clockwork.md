@@ -119,14 +119,3 @@ flag.
 OPUCC{c0gs_and_g3ars_keep_perf3ct_t1me_when_w0und_up_by_h4nds_67!!}
 </pre>
 
-<h2>Conclusion</h2>
-
-<p>
-This challenge is a good example of a reverse engineering task where the
-flag is hidden using simple bitwise operations instead of plain-text
-comparison. Although the transformations make the flag look complicated at
-first, they are completely reversible once the checking algorithm is
-understood. By analysing the binary, reproducing the pseudo-random byte
-sequence, and reversing the rotation and XOR operations, the original flag
-could be recovered successfully.
-</p>
