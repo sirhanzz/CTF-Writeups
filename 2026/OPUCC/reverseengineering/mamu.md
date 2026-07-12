@@ -3,7 +3,7 @@
 
 <h2>Steps</h2>
 
-<h3>Step 1 — Check the Binary</h3>
+<h3>Step 1 Check the Binary</h3>
 
 <p>Check the type of the provided file:</p>
 
@@ -11,7 +11,7 @@
 
 <p>The result shows that <strong>briyani</strong> is a 64-bit Linux ELF executable.</p>
 
-<h3>Step 2 — Extract Readable Strings</h3>
+<h3>Step 2 Extract Readable Strings</h3>
 
 <p>Use the following command to view readable strings inside the binary:</p>
 
@@ -26,7 +26,7 @@
 <li>An encrypted block containing the answers</li>
 </ul>
 
-<h3>Step 3 — Identify the Encryption</h3>
+<h3>Step 3 Identify the Encryption</h3>
 
 <p>The program decodes the encrypted answers before comparing them with the user's input.</p>
 
@@ -40,7 +40,7 @@
 
 m XOR M = space</pre>
 
-<h3>Step 4 — Decode the Answers</h3>
+<h3>Step 4 Decode the Answers</h3>
 
 <p>Create a Python script to extract and decode the encrypted answer block:</p>
 
@@ -58,7 +58,7 @@ for i, answer in enumerate(plain.split(b"\x00"), 1):
     if answer:
         print(i, answer.decode())</pre>
 
-<h3>Step 5 — Decoded Answers</h3>
+<h3>Step 5 Decoded Answers</h3>
 
 <p>The Python script reveals the following eight answers:</p>
 
@@ -78,7 +78,7 @@ for i, answer in enumerate(plain.split(b"\x00"), 1):
 
 8. masukkan bawang goreng, pudina, daun bawang, daun sup dan garam secukup rasa</pre>
 
-<h3>Step 6 — Connect to the Server</h3>
+<h3>Step 6 Connect to the Server</h3>
 
 <p>Connect to the remote challenge using Netcat:</p>
 
@@ -86,10 +86,12 @@ for i, answer in enumerate(plain.split(b"\x00"), 1):
 
 <p>Enter each decoded answer exactly as shown. The spelling, commas, and spaces must match.</p>
 
-<h3>Step 7 — Receive the Flag</h3>
+<h3>Step 7 Receive the Flag</h3>
 
 <p>After submitting all eight correct answers, the server displays the final flag.</p>
 
 <h2>Final Flag</h2>
+
+<pre>OPUCC{appr0v4d_by_m4m4k_c3rt1fi3d_1n_c00k1ng_briyani}</pre>
 
 <pre><code>OPUCC{appr0v4d_by_m4m4k_c3rt1fi3d_1n_c00k1ng_briyani}</code></pre>
