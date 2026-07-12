@@ -9,3 +9,5 @@
 **Step 2: Find the name of the place in google maps.**
 
 **Step 3: Look at the entrance wall and there is coordinates there.**
+
+**Step 4: Enter the coordinates in its format: OPUCC{x.xxxxxx_xxx.xxxxxx}**
