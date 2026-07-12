@@ -80,20 +80,17 @@ The main verification is performed using the following expression:
 <pre><code>sum(x[j] * pow(i + 2, j, MOD) for j in range(len(x))) % MOD</code></pre>
 
 <p>
-Instead of checking the flag character by character, the program converts every
-character into its ASCII value and uses those values in a mathematical formula.
-You can think of the flag as the coefficients of a polynomial. The program then
-evaluates this polynomial at 24 different values (from 2 to 25) and compares each
-result with the corresponding value stored in <code>TARGETS</code>. The flag is
-accepted only if all 24 computed values match the expected ones.
+Instead of checking the flag one character at a time, the program converts each
+character into its ASCII value and uses them in a mathematical formula. It then
+calculates 24 results and compares them with the values stored in
+<code>TARGETS</code>. The flag is only accepted if every result matches.
 </p>
 
 <p>
-Although the flag consists of only 22 characters, the checker produces 24
-independent equations. This gives enough information to recover every character
-uniquely. Because of this, brute-forcing the flag is unnecessary and would be
-impractical. A better approach is to model the equations and solve them using
-modular linear algebra in SageMath, which directly recovers the original flag.
+Even though the flag has only 22 characters, the program creates 24 equations,
+which is enough to determine every character. Instead of brute-forcing the
+flag, the equations can be solved using SageMath to recover the original flag
+directly.
 </p>
 
 <p>
