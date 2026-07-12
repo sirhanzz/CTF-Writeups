@@ -3,7 +3,7 @@
 
 <h2>Steps</h2>
 
-<h3>Step 1 — Inspect the Provided Values</h3>
+<h3>Step 1Inspect the Provided Values</h3>
 
 <p>Open <strong>public.txt</strong>. The file contains two RSA moduli, one public exponent, and one ciphertext:</p>
 
@@ -15,7 +15,7 @@ e = 65537
 
 c = 108310642587636709698764542513444596833844260597393607235030428612434463779846010521639101642541374322494993960601509425973360754942150278636692452045335804129943503953810600041048645581105883934596323649370030950474905147213838997428219578007445018872118754754817483075823012145862255515143726727277571086908</pre>
 
-<h3>Step 2 — Identify the RSA Weakness</h3>
+<h3>Step 2 Identify the RSA Weakness</h3>
 
 <p>The challenge states that the two ducks shared part of their RSA key.</p>
 
@@ -30,7 +30,7 @@ n2 = p × q2</pre>
 
 <pre>p = GCD(n1, n2)</pre>
 
-<h3>Step 3 — Recover the Shared Prime</h3>
+<h3>Step 3 Recover the Shared Prime</h3>
 
 <p>Use Python to calculate the greatest common divisor:</p>
 
@@ -43,7 +43,7 @@ print(p)</pre>
 
 <pre>12800894923540827735854096417503650169030125543234580822491190778530077534904970460226591608588458218181920421762228630181127106155456708278360656429759659</pre>
 
-<h3>Step 4 — Recover the Second Prime</h3>
+<h3>Step 4 Recover the Second Prime</h3>
 
 <p>Since the ciphertext was encrypted using <strong>n1</strong>, calculate its second prime factor:</p>
 
@@ -53,7 +53,7 @@ print(p)</pre>
 
 <pre>10040218685565855631567144365301544716477675574835590236561503359334802702008191200756978804241093613467102452447445722993638324007137591563592384573040957</pre>
 
-<h3>Step 5 — Calculate the Private Key</h3>
+<h3>Step 5 Calculate the Private Key</h3>
 
 <p>Calculate Euler's totient:</p>
 
@@ -68,7 +68,7 @@ print(p)</pre>
 <pre>phi = (p - 1) * (q1 - 1)
 d = pow(e, -1, phi)</pre>
 
-<h3>Step 6 — Decrypt the Ciphertext</h3>
+<h3>Step 6 Decrypt the Ciphertext</h3>
 
 <p>Decrypt the ciphertext using the RSA private key:</p>
 
@@ -76,7 +76,7 @@ d = pow(e, -1, phi)</pre>
 
 <p>Then convert the decrypted integer into readable bytes.</p>
 
-<h3>Step 7 — Complete Python Script</h3>
+<h3>Step 7 Complete Python Script</h3>
 
 <pre>from math import gcd
 
@@ -103,7 +103,7 @@ flag = m.to_bytes(
 
 print(flag)</pre>
 
-<h3>Step 8 — View the Output</h3>
+<h3>Step 8 View the Output</h3>
 
 <p>Running the script produces:</p>
 
