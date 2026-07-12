@@ -89,45 +89,6 @@ Sheet 277 → 7</pre>
 
 <pre>39 30 36 35 34 34 36 37</pre>
 
-<table>
-<tr>
-<th>Hex</th>
-<th>ASCII</th>
-</tr>
-<tr>
-<td>39</td>
-<td>9</td>
-</tr>
-<tr>
-<td>30</td>
-<td>0</td>
-</tr>
-<tr>
-<td>36</td>
-<td>6</td>
-</tr>
-<tr>
-<td>35</td>
-<td>5</td>
-</tr>
-<tr>
-<td>34</td>
-<td>4</td>
-</tr>
-<tr>
-<td>34</td>
-<td>4</td>
-</tr>
-<tr>
-<td>36</td>
-<td>6</td>
-</tr>
-<tr>
-<td>37</td>
-<td>7</td>
-</tr>
-</table>
-
 <p>The password is:</p>
 
 <pre>90654467</pre>
