@@ -1,5 +1,5 @@
 # CTF-Writeups
-OPUCC-2026 Writeups
+This repository contains my CTF writeups.
 
 ## Events
 
