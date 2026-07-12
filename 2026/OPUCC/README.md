@@ -15,6 +15,6 @@
 | ReverseEngineering | clockwork| [Writeup](reverseengineering/clockwork.md) | 
 | ReverseEngineering | duckvm| [Writeup](reverseengineering/duckvm.md) | 
 | ReverseEngineering | guessthelogo| [Writeup](reverseengineering/guessthelogo.md) | 
-| ReverseEngineering | kirk| [Writeup](reverseengineering/kirklogo.md) | 
+| ReverseEngineering | kirk| [Writeup](reverseengineering/kirk.md) | 
 | ReverseEngineering | mamu| [Writeup](reverseengineering/mamu.md) | 
 | ReverseEngineering | superbabyre| [Writeup](reverseengineering/superbabyre.md) | 
