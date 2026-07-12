@@ -1,10 +1,5 @@
 <img width="422" height="522" alt="Screenshot 2026-07-12 075310" src="https://github.com/user-attachments/assets/707fc760-3f73-4358-90e9-e0a7d5d7ac7a" />
 
-<h2>CTF Writeup: Path Traversal</h2>
-
-<p>
-<b>Goal:</b> Get admin access and trick the server's security filters to read a hidden flag file.
-</p>
 
 <h3>Step 1: Fake an Admin Token</h3>
 <p>
