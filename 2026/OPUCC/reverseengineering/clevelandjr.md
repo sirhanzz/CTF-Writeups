@@ -66,7 +66,16 @@ The correct German phrase is:
 
 <pre>du bist gut genug</pre>
 
+<p>
+However, the binary contains the misspelled words:
+</p>
 
+<ul>
+    <li><b>gut</b> → <b>gug</b></li>
+    <li><b>genug</b> → <b>genugg</b></li>
+</ul>
+
+<p>
 <p>
 Another hidden message says:
 </p>
