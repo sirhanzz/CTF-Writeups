@@ -92,6 +92,4 @@ for i, answer in enumerate(plain.split(b"\x00"), 1):
 
 <h2>Final Flag</h2>
 
-<pre>OPUCC{appr0v4d_by_m4m4k_c3rt1fi3d_1n_c00k1ng_briyani}</pre>
-
 <pre><code>OPUCC{appr0v4d_by_m4m4k_c3rt1fi3d_1n_c00k1ng_briyani}</code></pre>
