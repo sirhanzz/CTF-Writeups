@@ -19,3 +19,10 @@
 | ReverseEngineering | mamu| [Writeup](reverseengineering/mamu.md) | 
 | ReverseEngineering | superbabyre| [Writeup](reverseengineering/superbabyre.md) | 
 | Forensic | memorysoup| [Writeup](Forensic/memorysoup.md) | 
+| Forensic | aduhai| [Writeup](Forensic/aduhai.md) | 
+| Forensic | aduhai2| [Writeup](Forensic/aduhai2.md) | 
+| Forensic | aduhai3| [Writeup](Forensic/aduhai3.md) | 
+| Forensic | missingiroha| [Writeup](Forensic/missingiroha.md) | 
+| Forensic | irohahaverse| [Writeup](Forensic/irohaverse.md) | 
+| Forensic | theonethatgotaway| [Writeup](Forensic/theonethatgotaway.md) |
+| Forensic | sus exe| [Writeup](Forensic/sus exe.md) |
