@@ -90,7 +90,7 @@ polynomial at 24 different points (2 through 25) and compares the results with t
 Since there are only 22 characters in the entire flag but 24 equations, the system
 contains enough information to uniquely determine every character. Rather than
 brute-forcing every possible flag, the equations can be solved using modular linear
-algebra (for example, with SageMath or modular Gaussian elimination) to recover the
+algebra like with SageMath to recover the
 original bytes of the flag.
 </p>
 
