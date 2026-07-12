@@ -7,4 +7,4 @@
 | Pwn | shellcoder | [Writeup](Pwn/shellcoder.md) |
 | Pwn | borrowedcode | [Writeup](Pwn/borrowedcode.md) |
 | Pwn | theheap | [Writeup](Pwn/theheap.md) |
-| Pwn | ghost | [Writeup](Pwn/duckvm.md) |
+| Pwn | ghost | [Writeup](Pwn/ghost.md) |
