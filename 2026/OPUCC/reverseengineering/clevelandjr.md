@@ -104,10 +104,6 @@ Combining all discovered tokens gives the expected input:
 
 <pre>du bist gug genugg falsch</pre>
 
-<p>
-Depending on how the parser handles spaces, the input may also be accepted as:
-</p>
 
-<pre>dubistguggenuggfalsch</pre>
 
 
