@@ -8,3 +8,4 @@
 | Pwn | borrowedcode | [Writeup](Pwn/borrowedcode.md) |
 | Pwn | theheap | [Writeup](Pwn/theheap.md) |
 | Pwn | ghost | [Writeup](Pwn/ghost.md) |
+| Cryptography | onelineduck | [Writeup](Pwn/onelineduck.md) |
