@@ -17,8 +17,8 @@ understanding how the flag is being verified.
 <h3>Step 1: Looking at the Binary</h3>
 
 <p>
-The first thing I did was inspect the binary using tools such as
-<b>strings</b>, <b>Ghidra</b>, and <b>IDA</b>. Since the binary was not
+The first thing I did was inspect the binary using tools which is
+ <b>Ghidra</b>. Since the binary was not
 stripped, many function names and symbols were still available, making
 the analysis much easier.
 </p>
