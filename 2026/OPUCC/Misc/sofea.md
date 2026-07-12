@@ -8,7 +8,7 @@ Discord server to retrieve the hidden flag.
 
 <h2>Solution</h2>
 
-<h3>Step 1: Access the correct channel</h3>
+<h3>Step 1: CyberHeroes UiTM Discord server</h3>
 
 <p>
 First, open the CyberHeroes UiTM Discord server and navigate to the
