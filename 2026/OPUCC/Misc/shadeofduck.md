@@ -4,7 +4,7 @@
 <h2>Solution</h2>
 
 <p>
-We were provided with blocks of different yellow color[cite: 15]. The author asks for the hidden meaning in the ducks color[cite: 14].
+We were provided with blocks of different yellow color. The author asks for the hidden meaning in the ducks color[cite: 14].
 </p>
 
 <h3>Step 1: Extract the Hex Codes</h3>
@@ -20,9 +20,9 @@ The Canva color picker feature can be used to take the color hex from the image[
 <h3>Step 2: Decode the Hex String</h3>
 
 <p>
-CyberChef can be used to decode the hex into ascii text[cite: 48]. By using the <b>From Hex</b> recipe [cite: 42] with a Space delimiter [cite: 43], the input is converted into the output [cite: 44, 46], and we got the flag[cite: 48]!
+CyberChef can be used to decode the hex into ascii text. By using the <b>From Hex</b> recipe  with a Space delimiter [cite: 43], the input is converted into the output [cite: 44, 46], and we got the flag!
 </p>
 
 <h3>Recovered Flag</h3>
 
-<pre>OPUCC{h3x3d_c0l0r} [cite: 50]</pre>
+<pre>OPUCC{h3x3d_c0l0r} </pre>
