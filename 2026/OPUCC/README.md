@@ -9,3 +9,4 @@
 | Pwn | theheap | [Writeup](Pwn/theheap.md) |
 | Pwn | ghost | [Writeup](Pwn/ghost.md) |
 | Cryptography | onelineduck | [Writeup](Cryptography/onelineduck.md) |
+| Cryptography | tablefortwo| [Writeup](Cryptography/tablefortwo.md) |
