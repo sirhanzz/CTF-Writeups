@@ -14,3 +14,4 @@
 | ReverseEngineering | clevelandjr| [Writeup](reverseengineering/clevelandjr.md) | 
 | ReverseEngineering | clockwork| [Writeup](reverseengineering/clockwork.md) | 
 | ReverseEngineering | duckvm| [Writeup](reverseengineering/duckvm.md) | 
+| ReverseEngineering | guessthelogo| [Writeup](reverseengineering/guessthelogo.md) | 
