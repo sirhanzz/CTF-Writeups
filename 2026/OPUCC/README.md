@@ -40,5 +40,5 @@
 | Web| arrayescape| [Writeup](Web/arrayescape.md) |
 | Web| unihive| [Writeup](Web/unihive.md) |
 | Web| unihive2| [Writeup](Web/unihive2.md) |
-| Web| sqlimaybe?| [Writeup](Web/sqlimaybe?.md) |
+| Web| sqlimaybe?| [Writeup](Web/sqlimaybe.md) |
 | Web| agent| [Writeup](Web/agent.md) |
