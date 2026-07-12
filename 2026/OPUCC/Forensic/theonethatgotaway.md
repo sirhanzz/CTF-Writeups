@@ -1,5 +1,4 @@
 <img width="327" height="422" alt="image" src="https://github.com/user-attachments/assets/2232906a-9ab7-4948-ad38-7dacfda53b7c" /><img width="327" height="422" />
-<h1>The One That Got Away</h1>
 
 <h2>Steps</h2>
 
