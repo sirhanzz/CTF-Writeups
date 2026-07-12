@@ -3,7 +3,7 @@
 
 <h2>Steps</h2>
 
-<h3>Step 1 — Decode the Mission Brief</h3>
+<h3>Step 1 Decode the Mission Brief</h3>
 
 <p>The challenge provides a message written using hyphenated numbers.</p>
 
@@ -22,32 +22,7 @@ BUT DONT BE DUPED
 CUT DOWN THE WOODS
 THEY BE ERDOS</pre>
 
-<p>The message gives several important clues:</p>
-
-<table>
-<tr>
-<th>Clue</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td>Perrin pages</td>
-<td>Keep the page numbers that are Perrin numbers.</td>
-</tr>
-<tr>
-<td>Cut down the woods</td>
-<td>Remove the Erdős–Woods numbers.</td>
-</tr>
-<tr>
-<td>Don't be duped</td>
-<td>Remove numbers that appear in both sequences, such as 22.</td>
-</tr>
-<tr>
-<td>Find the password</td>
-<td>The remaining values will produce a password.</td>
-</tr>
-</table>
-
-<h3>Step 2 — Identify the Number Sequences</h3>
+<h3>Step 2 Identify the Number Sequences</h3>
 
 <p>The relevant Perrin numbers are:</p>
 
@@ -59,7 +34,7 @@ THEY BE ERDOS</pre>
 
 <p>The number <strong>22</strong> appears in both sequences. Based on the clue “Don't be duped,” it must still be removed.</p>
 
-<h3>Step 3 — Examine the PDF</h3>
+<h3>Step 3 Examine the PDF</h3>
 
 <p>Open <strong>Challenge.pdf</strong> and go to page 5.</p>
 
@@ -92,7 +67,7 @@ Sheet 277 → 7</pre>
 
 <pre>https://pastebin.com/viH4AecZ</pre>
 
-<h3>Step 4 — Filter the Binder Rows</h3>
+<h3>Step 4 Filter the Binder Rows</h3>
 
 <p>Keep the binder sheet numbers that are Perrin numbers.</p>
 
@@ -108,7 +83,7 @@ Sheet 277 → 7</pre>
 
 <pre>3930363534343637</pre>
 
-<h3>Step 5 — Convert Hexadecimal to ASCII</h3>
+<h3>Step 5 Convert Hexadecimal to ASCII</h3>
 
 <p>Split the hexadecimal string into pairs:</p>
 
@@ -167,7 +142,7 @@ print(password)</pre>
 
 <pre>90654467</pre>
 
-<h3>Step 6 — Unlock the Pastebin</h3>
+<h3>Step 6 Unlock the Pastebin</h3>
 
 <p>Open the Pastebin link:</p>
 
@@ -177,7 +152,7 @@ print(password)</pre>
 
 <pre>90654467</pre>
 
-<h3>Step 7 — Retrieve the Flag</h3>
+<h3>Step 7 Retrieve the Flag</h3>
 
 <p>After unlocking the Pastebin, the flag is displayed.</p>
 
