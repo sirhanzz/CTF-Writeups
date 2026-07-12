@@ -1,4 +1,4 @@
-```html
+
 <h2>Question</h2>
 
 <p>The challenge description is shown below.</p>
