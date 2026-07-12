@@ -76,11 +76,7 @@ only used as part of the program's dialogue and are <b>not</b> part of the
 flag.
 </p>
 
-<p>
-After following the validation logic and testing the expected input, the
-program accepts a modified version of the phrase that also includes leetspeak
-characters.
-</p>
+
 
 <h3>Recovered Flag</h3>
 
