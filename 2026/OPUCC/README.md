@@ -25,4 +25,4 @@
 | Forensic | missingiroha| [Writeup](Forensic/missingiroha.md) | 
 | Forensic | irohahaverse| [Writeup](Forensic/irohaverse.md) | 
 | Forensic | theonethatgotaway| [Writeup](Forensic/theonethatgotaway.md) |
-| Forensic | sus exe| [Writeup](Forensic/sus exe.md) |
+| Forensic | sus exe| [Writeup](Forensic/susexe.md) |
