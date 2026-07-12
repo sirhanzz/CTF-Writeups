@@ -31,3 +31,6 @@
 | Osint | childhoodgame| [Writeup](Osint/childhoodgame.md) |
 | Osint | solit| [Writeup](Osint/solit.md) |
 | Osint | taxmeifyoucan| [Writeup](Osint/taxmeifyoucan.md) | 
+| Misc | brainduck| [Writeup](Misc/brainduck.md) | 
+| Misc | shadeofduck| [Writeup](Misc/shadeofduck.md) | 
+| Misc | sofea| [Writeup](Misc/sofea.md) | 
