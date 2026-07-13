@@ -2,7 +2,7 @@
 
 <h2>Steps</h2>
 
-<h3>Step 1 — Check the Binary Protections</h3>
+<h3>Step 1 Check the Binary Protections</h3>
 
 <p>Use <strong>checksec</strong> to inspect the binary protections:</p>
 
@@ -14,32 +14,15 @@
 
 <p>The important results are:</p>
 
-<table>
-<tr>
-<th>Protection</th>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td>Stack Canary</td>
-<td>Disabled</td>
-<td>The overflow is not protected by a stack cookie.</td>
-</tr>
-<tr>
-<td>NX</td>
-<td>Disabled</td>
-<td>The stack is executable.</td>
-</tr>
-<tr>
-<td>PIE</td>
-<td>Disabled</td>
-<td>The binary uses fixed code addresses.</td>
-</tr>
-</table>
+<p><strong>Stack Canary: Disabled</strong> — Means there is no protection against the buffer overflow.</p>
+
+<p><strong>NX: Disabled</strong> — Means the stack can execute shellcode.</p>
+
+<p><strong>PIE: Disabled</strong> — Means the binary uses fixed memory addresses.</p>
 
 <p>The <strong>GNU_STACK</strong> segment has RWX permissions, meaning shellcode placed on the stack can be executed.</p>
 
-<h3>Step 2 — Analyse the Vulnerable Function</h3>
+<h3>Step 2 Analyse the Vulnerable Function</h3>
 
 <p>Open the binary in Ghidra, IDA, or use <strong>objdump</strong>:</p>
 
@@ -65,7 +48,7 @@ read(0, buf, 0x180);</pre>
 
 <p>This creates a stack buffer overflow.</p>
 
-<h3>Step 3 — Calculate the Return Address Offset</h3>
+<h3>Step 3 Calculate the Return Address Offset</h3>
 
 <p>The stack layout is:</p>
 
@@ -79,7 +62,7 @@ read(0, buf, 0x180);</pre>
 
 <p>The return address must be overwritten after exactly <strong>0x108 bytes</strong>.</p>
 
-<h3>Step 4 — Use the Leaked Buffer Address</h3>
+<h3>Step 4 Use the Leaked Buffer Address</h3>
 
 <p>The program prints the location of the stack buffer:</p>
 
@@ -89,7 +72,7 @@ read(0, buf, 0x180);</pre>
 
 <p>The exploit can therefore overwrite the return address with the leaked buffer address.</p>
 
-<h3>Step 5 — Prepare the Shellcode</h3>
+<h3>Step 5 Prepare the Shellcode</h3>
 
 <p>Use x86-64 shellcode that executes:</p>
 
@@ -116,7 +99,7 @@ syscall</pre>
     b"\x57\x54\x5f\x6a\x3b\x58\x99\x0f\x05"
 )</pre>
 
-<h3>Step 6 — Build the Payload</h3>
+<h3>Step 6 Build the Payload</h3>
 
 <p>The payload layout is:</p>
 
@@ -133,7 +116,7 @@ payload += struct.pack("&lt;Q", buffer_address)</pre>
 
 <p>The address is packed using little-endian format because the binary uses x86-64 architecture.</p>
 
-<h3>Step 7 — Create the Exploit Script</h3>
+<h3>Step 7 Create the Exploit Script</h3>
 
 <pre>import re
 import socket
@@ -195,7 +178,7 @@ while True:
 
     print(output.decode(errors="ignore"), end="")</pre>
 
-<h3>Step 8 — Run the Exploit</h3>
+<h3>Step 8 Run the Exploit</h3>
 
 <p>Run the Python script:</p>
 
@@ -211,7 +194,7 @@ while True:
 6. Executes /bin/sh
 7. Sends cat flag.txt</pre>
 
-<h3>Step 9 — Retrieve the Flag</h3>
+<h3>Step 9 Retrieve the Flag</h3>
 
 <p>After the vulnerable function returns, the shellcode executes and starts a shell.</p>
 
