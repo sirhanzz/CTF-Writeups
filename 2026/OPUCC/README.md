@@ -10,7 +10,7 @@
 | Pwn | ghost | [Writeup](Pwn/ghost.md) |
 | Cryptography | onelineduck | [Writeup](Cryptography/onelineduck.md) |
 | Cryptography | tablefortwo| [Writeup](Cryptography/tablefortwo.md) |
-| Cryptography | tablefortwo| [Writeup](Cryptography/sharingiscaring.md) |
+| Cryptography | sharingiscaring| [Writeup](Cryptography/sharingiscaring.md) |
 | ReverseEngineering | clevelandjr| [Writeup](reverseengineering/clevelandjr.md) | 
 | ReverseEngineering | clockwork| [Writeup](reverseengineering/clockwork.md) | 
 | ReverseEngineering | duckvm| [Writeup](reverseengineering/duckvm.md) | 
